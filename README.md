@@ -1,3 +1,7 @@
+PART 1 OF THE COLLECTION UPLOADED 05.08.2025 (IT'S MY BIRTHDAY SO HERE IS A PRESENT FOR YOU ALL) 
+If you need help with the setup, cause i didn't write any instruction please DM and i will help as soon as i can.
+Have fun!
+
 # multisniper_collections
 A collection of tools created by @x3raphim the developer of MultiSniper
 
