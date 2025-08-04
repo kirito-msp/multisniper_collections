@@ -34,6 +34,6 @@ From the list of tools you have:
  
 My telegram account is @x3raphim and im available for projects if you need, i'm a full stack developer so i can work frontend and backend with no problems.
 
-If you enjoy the above tools and you feel you like to contribute to me adding more please use this wallet to donate any amounts you want: 0x55d32ceC588866ECA004eC1EEfCa0297b9108c88
+If you enjoy the above tools and you feel you like to contribute to me adding more please use this wallet to donate any amounts you want: 0x5c206139CA41E3538935e6491fEAeb44FAd7BeF4
 
 Thank you! Have fun, stay safe and may we all be rich someday!
