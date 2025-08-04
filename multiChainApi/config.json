@@ -1,0 +1,32 @@
+{
+    "mongodb": {
+        "user": "multiChainApi",
+        "password": "api2024@!MultiChain",
+        "host": "127.0.0.1",
+        "port": "27017",
+        "database": "multiChainApi"
+    },
+    "api": {
+        "apikey": [
+           "G9DQYZ6BPSUMMW6BEBI21A3NZMCWX9TDZM",
+           "x3raphim" 
+        ]
+    },
+    "ethereum": {
+        "rpcWsUrl": "http://127.0.0.1:8545",
+        "wsUrl": "ws://127.0.0.1:8546"
+    },
+    "base": {
+        "rpcWsUrl": "http://127.0.0.1:8547",
+        "wsUrl": "ws://127.0.0.1:8548"
+    },
+    "bsc": {
+        "rpcWsUrl": "http://127.0.0.1:8547",
+        "wsUrl": "ws://127.0.0.1:8548"
+    },
+    "avax": {
+        "rpcWsUrl": "http://127.0.0.1:9650/ext/bc/C/rpc",
+        "wsUrl": "ws://127.0.0.1:9650/ext/bc/C/ws"
+    },
+    "privateKey": "e0159953e5083d4362513d1b6afacb38e36b7768f4c445677e3614404d4154e4"
+}

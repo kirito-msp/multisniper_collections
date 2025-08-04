@@ -1,0 +1,31 @@
+{
+  "name": "etherscanapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "bignumber.js": "^9.1.2",
+    "chrome-remote-interface": "^0.33.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.7",
+    "ethers": "^5.7.0",
+    "evm": "^0.2.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.0",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.13.0",
+    "p-queue": "^8.1.0",
+    "playwright": "^1.51.1",
+    "puppeteer": "^24.6.1",
+    "telegraf": "^4.16.3"
+  }
+}
