@@ -1,0 +1,18 @@
+{
+    "mongodb": {
+        "user": "arenaAvaxApi",
+        "password": "arenaAvaxApi",
+        "host": "127.0.0.1",
+        "port": "27017",
+        "database": "arenaAvaxDb"
+    },
+    "api": {
+        "apikey": [
+           "G9DQYZ6BPSUMMW6BEBI21A3NZMCWX9TDZM",
+           "x3raphim" 
+        ]
+    },
+    "avax": {
+        "wsUrl": "ws://65.21.20.40:9650/ext/bc/C/ws"
+    }
+}
