@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@uniswap/sdk-core": "^7.5.0",
+    "@uniswap/v4-sdk": "^1.18.1",
+    "dotenv": "^16.4.5",
+    "ethers": "^5.7.0",
+    "mongoose": "^8.9.5",
+    "telegraf": "^4.16.3"
+  }
+}
