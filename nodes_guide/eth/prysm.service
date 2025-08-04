@@ -1,0 +1,14 @@
+Description=Prysm Beacon Node
+After=network.target
+Wants=network.target[Service]
+
+[Service]
+User=root
+Group=root
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/home/ethfullnode/consensus/prysm/prysm.sh beacon-chain --checkpoint-sync-url=https://beaconstate.info// --genesis-beacon-api-url=https://beaconstate.info/ --execution-endpoint=http://127.0.0.1:8551 --jwt-secret=/home/ethfullnode/consensus/prysm/jwt.hex --accept-terms-of-use
+
+[Install]
+WantedBy=default.target
