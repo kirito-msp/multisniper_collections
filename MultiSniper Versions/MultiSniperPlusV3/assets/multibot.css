@@ -1,0 +1,132 @@
+body {
+    font-family: monospace;
+  }
+
+#main_container{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid lightblue;
+}
+
+#wallet_balance{
+    float:right;
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 10px;
+    background: aliceblue;
+    font-family: monospace;
+}
+
+#presalePlatformDiv{
+    margin-bottom: 10px;
+}
+
+/* #wallet{
+    width: 100%;
+} */
+
+#row{
+    margin: 10px;
+}
+
+#start{
+    margin-top: 10px;
+}
+
+#output_container{
+    margin-top:5px;
+}
+
+#output{
+    overflow-y: scroll; 
+    height:400px; 
+    border:1px solid gray;
+    color: white;
+    background: black;
+    /* overflow-y: hidden; */
+}
+
+#output p{
+    margin: 0!important;
+}
+
+#settings_container{
+    border:1px solid gray;
+    padding-top: 10px;
+}
+#update_btn{
+    float: right;
+}
+#container_update_btn{
+    margin-left: auto;
+    order: 2;
+}
+#save_container, #start_on_telegram_container{
+    text-align: center;
+    display: flex;
+    min-height: 70px;
+}
+#first_container{
+    border: 1px solid gray;
+    margin-bottom: 5px;
+    padding: 2px;
+}
+.col-lg-2{
+    display: flex;
+    align-items: center;
+}
+#btn_container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.setting_mode{
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    align-items: flex-end;
+}
+#settings_text{
+    font-size: 14px;
+}
+#claim{
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#manual_sell{
+    text-align: center !important;
+    margin:0 auto;
+}
+
+#modeSelect, #choseMethode, #blockChainSelect, #marketSelect{
+    background-color: darkslateblue;
+}
+
+#sw_needApproval{
+    display: inline-flex;
+}
+.bot_number{
+    width: 20%;
+}
+.bot_number > .btn{
+    width: 100%;
+}
+#tog_needApproval{
+    display: flex;
+    align-items: flex-end;
+}
+#labelSnipeOrBuy{
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
+.btn_active{
+    background-color: #198754;
+    color: white;
+}
+.btn_inctive{
+    color: #198754;
+    background-color: white;
+}
