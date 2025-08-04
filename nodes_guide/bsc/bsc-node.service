@@ -1,0 +1,14 @@
+Description=BSC Node startup script
+After=network.target
+Wants=network.target[Service]
+
+[Service]
+User=root
+Group=root
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/home/bscfullnode/bsc/geth --config /home/bscfullnode/bsc/config.toml --datadir /home/bscfullnode/bsc/bscdata --ipcpath /home/bscfullnode/bsc/bscdata/geth.ipc --datadir.ancient /home/bscfullnode/bsc/bscdata/geth/chaindata/ancient --cache 8000 --history.transactions=90000 --syncmode=full --db.engine=pebble --tries-verify-mode=none --ws --ws.addr 0.0.0.0 --ws.origins * --ws.api eth,net,web3,txpool,debug --http --http.addr 0.0.0.0 --http.corsdomain * --http.api eth,net,web3
+
+[Install]
+WantedBy=default.target
