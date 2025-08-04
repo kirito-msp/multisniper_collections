@@ -1,0 +1,14 @@
+Description=ETH Node startup script
+After=network.target
+Wants=network.target[Service]
+
+[Service]
+User=root
+Group=root
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/home/ethfullnode/execution/geth --config /home/ethfullnode/execution/config.toml --datadir /home/ethfullnode/execution/ethdata --ipcpath /home/ethfullnode/execution/ethdata/geth.ipc --metrics --http --http.addr 0.0.0.0 --maxpeers 500 --cache 18000 --authrpc.addr localhost --authrpc.port 8551 --authrpc.vhosts localhost --authrpc.jwtsecret /home/ethfullnode/consensus/prysm/jwt.hex --http.corsdomain '*' --http.api eth,net,web3,txpool --ws --ws.addr 0.0.0.0 --ws.origins '*' --ws.api eth,net,web3,txpool  --snapshot=false
+
+[Install]
+WantedBy=default.target
