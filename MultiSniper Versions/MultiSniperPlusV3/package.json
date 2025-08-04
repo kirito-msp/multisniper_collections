@@ -1,0 +1,44 @@
+{
+  "name": "snipe",
+  "version": "4.0.0",
+  "description": "",
+  "main": "snipe.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node snipe.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ethersproject/bytes": "^5.4.0",
+    "@pancakeswap-libs/sdk": "^1.0.1",
+    "@solidity-parser/parser": "^0.14.0",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "env-dot-prop": "^3.0.0",
+    "envsubst": "^4.0.0",
+    "ethers": "^5.4.1",
+    "exports": "^0.0.1",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "node-telegram-bot-api": "^0.53.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^4.1.3",
+    "telegram": "^2.5.0",
+    "web3": "^1.4.0",
+    "words-to-numbers": "^1.5.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
