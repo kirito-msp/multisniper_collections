@@ -1,0 +1,88 @@
+#This is for Ubuntu only, for other versions please change the commands!
+"MultiSniper Binance Smart Chain node setup !!!"
+
+#INSTALL DEPENDEDNCES AND FIREWALL:
+sudo apt-get update
+sudo apt update
+sudo apt-get -y upgrade
+sudo apt-get -y install build-essential
+sudo apt-get -y install software-properties-common
+sudo apt -y install unzip
+sudo apt -y install wget
+sudo apt -y install git
+sudo apt -y install ufw
+sudo ufw --force reset
+sudo apt -y install tar
+sudo apt -y install nano
+sudo apt -y install nodejs
+sudo apt -y install npm
+npm install pm2 -g
+
+#SETUP FIREWALL PORTS:
+ufw allow 22
+ufw allow 8646
+ufw allow 8648
+ufw allow 8648
+ufw allow 8001
+ufw allow 30303
+ufw allow 30301
+ufw allow 8000
+ufw allow 8001
+ufw deny out 13000
+sudo ufw deny out to 10.0.0.0/8
+sudo ufw deny out to 172.16.0.0/12
+sudo ufw deny out to 192.168.0.0/16
+sudo ufw deny out to 169.254.0.0/16
+sudo ufw deny out to 100.64.0.0/10
+sudo ufw deny out to 198.18.0.0/15
+sudo ufw deny out to fe80::/10
+sudo ufw deny out to fc00::/7
+sudo ufw --force enable
+
+#SETUP NODE + PRYSM + SERVICES:
+cd /
+cd /etc/systemd/system/
+sudo wget https://ifvarx.com/scripts/bsc/bsc-node.service
+#YOU CAN GET THE bsc-node.service FROM THIS REPOSITORY TOO IF ITS NOT AVAILABLE ON ifvarx.com
+
+cd /
+cd home
+sudo rm -rf bscfullnode
+sudo mkdir bscfullnode
+cd bscfullnode
+sudo mkdir bsc
+cd bsc
+
+#PLEASE CHECK https://github.com/bnb-chain/bsc/releases FOR NEW UPDATES AND RELEASES
+sudo wget https://github.com/bnb-chain/bsc/releases/download/v1.4.18/geth_linux
+
+sudo unzip mainnet.zip 
+sudo rm -rf config.toml
+sudo wget https://multi-sniper.com/scripts/files/config.toml
+
+#PLEASE CHECK https://github.com/bnb-chain/bsc/releases FOR NEW UPDATES AND RELEASES
+sudo wget https://github.com/bnb-chain/bsc/releases/download/v1.4.18/geth_linux
+
+sudo mv geth_linux geth
+sudo chmod +x geth
+sudo systemctl enable bsc-node.service
+sudo systemctl start bsc-node.service
+sudo systemctl stop bsc-node.service
+cd bscdata/geth
+#PLEASE CHECK https://github.com/bnb-chain/bsc-snapshots FOR RECENT SNAPSHOTS AND WAIT FOR IT TO DOWNLOAD
+aria2c -s4 -x4 -k1024M https://snapshots.48.club/geth.fast.40554701.tar.zst -o geth.tar.zst
+#AFTER YOU DOWNLOAD THE SNAPSHOT PLEASE EXTRACT IT AND REPLACE THE chaindata FOLDER IN YOUR bcsdata/geth/chaindata
+zstd -cd geth.tar.zst | tar xf -
+
+#START THE NODE AND CHECK IF EVERYTHING IS OK
+sudo systemctl start bsc-node.service
+
+ "--------------------------------------------------------------------------------------------------------"
+ "INFO!!! Type: 'sudo journalctl -f -u bsc-node.service' for service logs"
+ "INFO!!! Type: 'tail -f /home/bscfullnode/bsc/bscdata/bsc.log' for node logs"
+ "--------------------------------------------------------------------------------------------------------"
+ "INFO!!! To access the geth console use '/home/bscfullnode/bsc/geth attach http://127.0.0.1:8547'"
+ "INFO!!! GETH CONSOLE: 'eth.syncing' to check syncing status"
+ "INFO!!! GETH CONSOLE: 'net.peerCount' to check peers status"
+ "INFO!!! GETH CONSOLE: 'exit' return to OS terminal"
+ "--------------------------------------------------------------------------------------------------------"
