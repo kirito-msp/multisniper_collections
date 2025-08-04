@@ -1,0 +1,86 @@
+#This is for Ubuntu only, for other versions please change the commands!
+"MultiSniper Ethereum node with Prysm setup !!! POS"
+
+#INSTALL DEPENDEDNCES AND FIREWALL:
+sudo apt-get update
+sudo apt update
+sudo apt-get -y upgrade
+sudo apt-get -y install build-essential
+sudo apt-get -y install software-properties-common
+sudo apt -y install unzip
+sudo apt -y install wget
+sudo apt -y install git
+sudo apt -y install ufw
+sudo ufw --force reset
+sudo apt -y install tar
+sudo apt -y install nano
+sudo apt -y install nodejs
+sudo apt -y install npm
+npm install pm2 -g
+
+#SETUP FIREWALL PORTS:
+ufw allow 22
+ufw allow 8646
+ufw allow 8648
+ufw allow 8648
+ufw allow 30303
+ufw allow 30301
+ufw allow 8000
+ufw allow 8001
+ufw deny out 13000
+sudo ufw deny out to 10.0.0.0/8
+sudo ufw deny out to 172.16.0.0/12
+sudo ufw deny out to 192.168.0.0/16
+sudo ufw deny out to 169.254.0.0/16
+sudo ufw deny out to 100.64.0.0/10
+sudo ufw deny out to 198.18.0.0/15
+sudo ufw deny out to fe80::/10
+sudo ufw deny out to fc00::/7
+sudo ufw --force enable
+
+#SETUP NODE + PRYSM + SERVICES:
+cd /
+cd home
+sudo mkdir ethfullnode && cd ethfullnode
+sudo mkdir consensus
+sudo mkdir execution
+cd consensus
+sudo mkdir prysm && cd prysm
+sudo curl https://raw.githubusercontent.com/prysmaticlabs/prysm/master/prysm.sh --output prysm.sh && sudo chmod +x prysm.sh
+sudo ./prysm.sh beacon-chain generate-auth-secret
+cd ..
+cd ..
+cd execution
+sudo wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.15.5-4263936a.tar.gz
+sudo tar -xvf geth-linux-amd64-11.15.5-4263936a.tar.gz
+sudo rm -rf geth-linux-amd64-1.15.5-4263936a.tar.gz
+cd geth-linux-amd64-1.15.5-4263936a
+sudo mv geth /home/ethfullnode/execution/geth
+cd ..
+sudo rm -rf geth-linux-amd64-1.15.5-4263936a
+sudo chmod +x geth
+
+#DOWNLOAD THE config.toml FOR YOUR ETHEREUM NODE FROM:
+sudo wget https://ifvarx.com/scripts/eth/config.toml
+#OR SEARCH FOR IT IN THIS REPOSITORY
+
+cd /etc/systemd/system/
+sudo wget https://ifvarx.com/scripts/eth/eth-node.service
+sudo wget https://ifvarx.com/scripts/files/prysm.service
+sudo systemctl enable eth-node.service
+sudo systemctl start eth-node.service
+sudo systemctl enable prysm.service
+sudo systemctl start prysm.service
+
+ "--------------------------------------------------------------------------------------------------------"
+ "INFO!!! Type: 'sudo journalctl -f -u prysm.service' for prysm logs" 
+ "INFO!!! Type: 'sudo journalctl -f -u eth-node.service' for geth logs"
+ "--------------------------------------------------------------------------------------------------------"
+ "INFO!!! To access the geth console use '/home/ethfullnode/execution/geth attach http://127.0.0.1:8545'"
+ "INFO!!! GETH CONSOLE: 'eth.syncing' to check syncing status"
+ "INFO!!! GETH CONSOLE: 'net.peerCount' to check peers status"
+ "INFO!!! GETH CONSOLE: 'exit' return to OS terminal"
+ "--------------------------------------------------------------------------------------------------------"
+ "WARNING!!! Only after prysm is synced the geth node will start syncing too"
+ "WARNING!!! This is for clients only, please don't share!"
+ "--------------------------------------------------------------------------------------------------------"
